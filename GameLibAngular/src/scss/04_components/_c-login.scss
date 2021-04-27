@@ -1,0 +1,18 @@
+.c-login{
+  width: 400px;
+  margin: auto;
+  margin-top: 200px;
+  padding-top: 25px;
+
+  background-color: getColor('negro', 5);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title{
+    margin: 25px auto;
+    color: white;
+    font-size: 35px;
+  }
+}

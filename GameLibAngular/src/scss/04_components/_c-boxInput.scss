@@ -1,0 +1,56 @@
+.c-boxInput {
+  height: 40px;
+  width: 80%;
+
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+
+  color: getColor('blanco', 2);
+  background-color: getColor('blanco', 2);
+
+  border-radius: 10px;
+
+  &__icon {
+    color: getColor('negro', 2);
+    border-right: 2px solid getColor('blanco', 2);
+    text-align: center;
+
+    font-size: 25px;
+    width: 50px;
+    box-sizing: border-box;
+    padding-top: 7px;
+    line-height: 25px;
+  }
+
+  &__input {
+    width: 300px;
+    border: 0px;
+
+    margin-left: 10px;
+
+    outline: none;
+
+    border-right: 1px;
+    border-radius: 10px;
+    background-color: getColor('blanco', 2);
+  }
+
+  &__botonAceptar {
+    width: 80%;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid getColor('negro', 2);
+    border-radius: 10px;
+
+    background-color: getColor('primario', 4);
+    color: getColor('blanco', 2);
+  }
+}

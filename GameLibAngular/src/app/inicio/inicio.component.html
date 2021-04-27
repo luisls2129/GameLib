@@ -1,0 +1,20 @@
+<div class="p-cardLastGames">
+  <div *ngFor = "let data of datas">
+      <div class="c-cardLastGames">
+        <div class="l-infoUserLastGames">
+          <img class="c-cardLastGames__userIcon" src="{{data['user']['icon']}}">
+          <p class="c-cardLastGames__userName">{{data['user']['name']}}</p>
+        </div>
+        <div class="c-cardLastGamesDatas">
+          <p class="c-cardLastGamesDatas__gameName">{{data['game']['name']}}</p>
+          <p class="c-cardLastGamesDatas__assessment">Valoración : {{data['game']['assessment']}}</p>
+          <p class="c-cardLastGamesDatas__time">Tiempo jugado : {{data['game']['time']}} horas</p>
+          <p class="c-cardLastGamesDatas__commentary">Comentario : {{data['game']['commentary']}}</p>
+        </div>
+        <img class="c-cardLastGames__image"  src="{{data['game']['url_image']}}" alt="{{data['game']['url_image']}}">
+      </div>
+  </div>
+</div>
+
+
+

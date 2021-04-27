@@ -1,0 +1,10 @@
+.p-misJuegos{
+  margin: auto;
+  background-color: getColor('negro', 2)+d9;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  min-height: calc(100vh - 50px);
+}

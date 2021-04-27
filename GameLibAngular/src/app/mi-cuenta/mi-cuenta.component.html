@@ -1,0 +1,39 @@
+<div class="p-miCuenta">
+  <div id="infoGeneral" class="c-miCuentaIcon">
+    <label class="g--margin-auto g--margin-bottom-0 g--margin-top-5" style="border-radius: 160px;">
+      <img class="c-miCuentaIcon__icon" src="{{newUser.icon}}" alt="">
+      <input type="file" accept="image/*" class="c-miCuentaIcon__input" id="inputIcon" (change)="cambiarIcono($event)">
+    </label>
+  </div>
+  <div id="formMiCuenta" class="c-miCuentaDatas">
+    <div class="c-miCuentaData">
+      <div class="c-miCuentaData__boxData">
+        <label class="c-miCuentaData__label">NOMBRE DE USUARIO</label>
+        <h6 class="c-miCuentaData__data">{{newUser.name}}</h6>
+      </div>
+      <button class="c-miCuentaData__edit" (click)="changeName()">Editar</button>
+    </div>
+    <div class="c-miCuentaData">
+      <div class="c-miCuentaData__boxData">
+        <label class="c-miCuentaData__label">EMAIL</label>
+        <h6 class="c-miCuentaData__data">{{newUser.email}}</h6>
+      </div>
+      <button class="c-miCuentaData__edit" (click)="changeEmail()">Editar</button>
+    </div>
+    <div class="c-miCuentaData">
+      <div class="c-miCuentaData__boxData">
+        <label class="c-miCuentaData__label">CONTRASEÑA</label>
+        <h6 class="c-miCuentaData__data">**************</h6>
+      </div>
+      <button class="c-miCuentaData__edit" (click)="changePassword()">Editar</button>
+    </div>
+    <div class="c-miCuentaData">
+      <div class="c-miCuentaData__boxData">
+        <label class="c-miCuentaData__label">ID DE STEAM</label>
+        <h6 class="c-miCuentaData__data">{{newUser.idSteam}}</h6>
+      </div>
+      <button class="c-miCuentaData__edit" (click)="changeIdSteam()">Editar</button>
+    </div>
+    <button class="c-miCuentaDatas__mySteam" routerLink="/miSteam" *ngIf="verMiSteam">Mi cuenta Steam</button>
+  </div>
+</div>

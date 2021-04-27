@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse bg-inverse navbar-dark bg-dark navbar-toggleable-sm navbar-expand-md">
+  <a class="navbar-brand" routerLink="/inicio" style="margin: 0px;">
+      <img src="../../assets/icono.png" width="30" height="30" >
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#desplegable"
+      aria-controls="desplegable" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse col-sm-12 " id="desplegable" style="width: calc(100vw - 100px);">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link active" routerLink="/misJuegos" *ngIf="(mostrar)">Mis juegos</a>
+          <!--<a class="nav-item nav-link active" routerLink="/agregarJuego" *ngIf="(mostrar())">Añadir a mi biblioteca</a>-->
+          <a class="nav-item nav-link active" routerLink="/miCuenta" *ngIf="(mostrar)">Mi cuenta</a>
+      </div>
+      <div class="d-flex justify-content-end" style="margin-left: auto;">
+          <a class="btn btn-outline-success" routerLink="/login" *ngIf="(!mostrar)" style="margin-left: 20px; ">Login</a>
+          <a class="btn btn-outline-success" (click)="logOut()" *ngIf="(mostrar)" style="margin-left: 20px;">LogOut</a>
+          <a class="btn btn-outline-success" routerLink="/registro" *ngIf="(!mostrar)" style="margin-left: 20px;">Registrarse</a>
+      </div>
+  </div>
+</nav>

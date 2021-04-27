@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~@sweetalert2/themes/dark/dark.scss';
+
+@import
+'01_utilities/functions',
+'01_utilities/variables';
+
+@import
+'02_base/reset-size',
+'02_base/reset1',
+'02_base/reset2';
+
+@import
+'03_layout/l-body',
+'03_layout/l-infoUserLastGames';
+
+@import
+'04_components/c-cardLastGames',
+'04_components/c-cardLastGamesDatas',
+'04_components/c-boxInput',
+'04_components/c-login',
+'04_components/c-register',
+'04_components/c-cardMyGame',
+'04_components/c-title',
+'04_components/c-commentary',
+'04_components/c-game',
+'04_components/c-boxAddGame',
+'04_components/c-addGame',
+'04_components/c-formAddGame',
+'04_components/c-range',
+'04_components/c-miCuentaIcon',
+'04_components/c-miCuentaDatas',
+'04_components/c-miCuentaData',
+'04_components/c-bibliotecaVacia';
+
+@import
+'05_pages/p-LastGames',
+'05_pages/p-misJuegos',
+'05_pages/p-addGame',
+'05_pages/p-miCuenta';
+
+@import
+'06_global/g--margin-auto',
+'06_global/g--boxAllLine',
+'06_global/g-margin';

@@ -1,0 +1,8 @@
+.p-miCuenta{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+
+  background-color: getColor('negro', 2)+d9;
+}

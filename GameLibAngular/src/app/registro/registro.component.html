@@ -1,0 +1,24 @@
+<div class="c-register">
+  <p class="c-register__title">Registro</p>
+  <div class="c-boxInput" id="boxNameRegister">
+    <i class="far fa-user c-boxInput__icon"></i>
+    <input type="text" class="c-boxInput__input" id="inputNombre" placeholder="Nombre" [(ngModel)]="nombre" >
+  </div>
+  <div class="c-boxInput" id="boxEmailRegister">
+    <i class="far fa-envelope c-boxInput__icon"></i>
+    <input type="text" class="c-boxInput__input" id="inputEmail" placeholder="Email" [(ngModel)]="email">
+  </div>
+  <div class="c-boxInput" id="boxPasswordRegister">
+    <i class="fas fa-unlock-alt c-boxInput__icon"></i>
+    <input type="password" class="c-boxInput__input" id="inputContraseña" placeholder="Contraseña" [(ngModel)]="password">
+  </div>
+  <div class="c-boxInput" id="boxPasswordConfirmationRegister">
+    <i class="fas fa-unlock-alt c-boxInput__icon"></i>
+    <input type="password" class="c-boxInput__input" id="inputConfirmarContraseña" placeholder="Confirmar Contraseña" [(ngModel)]="password_confirmation">
+  </div>
+
+  <button type="submit" class="c-boxInput__botonAceptar" (click)="enviar()">Registrarse</button>
+</div>
+
+
+<p>{{error}}</p>

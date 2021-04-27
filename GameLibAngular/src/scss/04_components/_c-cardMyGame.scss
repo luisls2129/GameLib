@@ -1,0 +1,45 @@
+.c-cardMyGame{
+  width: 450px;
+
+  margin: 20px;
+
+  border: 1px solid getColor('secundario', 6);
+  color: getColor('blanco', 9);
+  background-color: getColor('negro', 3);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__gameImage{
+    width: 100%;
+    height: 225px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__box{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-between;
+  }
+
+  &__button{
+    height: 30px;
+
+    margin: 10px 10px 10px auto;
+
+    border: getColor('secundario', 9) 1px solid;
+    border-radius: 5px;
+
+    color: getColor('secundario', 9);
+    background: transparent;
+  }
+
+  &__button:hover{
+    background-color: getColor('secundario', 9);
+    color: getColor('blanco', 9);
+  }
+}

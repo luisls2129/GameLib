@@ -1,0 +1,20 @@
+{
+  "/IPlayerService/*": {
+    "target": "http://api.steampowered.com",
+    "secure": false,
+    "changeOrigin" : true,
+    "logLevel": "debug"
+  },
+  "/api/*": {
+    "target": "https://store.steampowered.com",
+    "secure": false,
+    "changeOrigin" : true,
+    "logLevel": "debug"
+  },
+  "/ISteamUser/*": {
+      "target": "http://api.steampowered.com",
+      "secure" : false,
+      "changeOrigin" : true,
+      "logLevel": "debug"
+  }
+}

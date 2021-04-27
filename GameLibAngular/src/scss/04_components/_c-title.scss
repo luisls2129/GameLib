@@ -1,0 +1,28 @@
+.c-title{
+  font-size: 25px;
+  text-align: center;
+  margin: 10px;
+}
+
+.cont{
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 150px 150px;
+  grid-template-areas: "a b b"
+                       "a c c";
+}
+
+.a{
+  grid-area: a;
+  border: 1px solid black;
+}
+
+.b{
+  grid-area: b;
+  border: 1px solid red;
+}
+
+.c{
+  grid-area: c;
+  border: 1px solid yellow;
+}
