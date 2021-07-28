@@ -251,6 +251,6 @@ class GameController extends Controller
 
     public function comprobarToken()
     {
-        return true;
+        return response()->json(true);
     }
 }

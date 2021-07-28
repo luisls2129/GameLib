@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.authService.login(loginObj).subscribe(response => {
+        alert(response['user']['email']);
         //console.log(response['user']['_id']);
         localStorage.setItem('token', response['token']);
         localStorage.setItem('userId', response['user']['_id']);
