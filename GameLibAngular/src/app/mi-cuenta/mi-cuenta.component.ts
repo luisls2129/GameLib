@@ -5,7 +5,6 @@ import { login } from '../modelos/login';
 import { User } from '../modelos/User';
 import { AuthenticateService } from '../servicios/authenticate.service';
 import { Games } from '../servicios/games.service';
-import { SteamService } from '../servicios/steam.service';
 import { UploadService } from '../servicios/upload.service';
 
 import sweet from 'sweetalert2/src/sweetalert2.js'
@@ -18,7 +17,7 @@ import sweet from 'sweetalert2/src/sweetalert2.js'
 })
 export class MiCuentaComponent implements OnInit {
 
-  constructor(private gameService: Games, private authService: AuthenticateService, private steamService: SteamService, private uploadService: UploadService, private router: Router) { }
+  constructor(private gameService: Games, private authService: AuthenticateService, private uploadService: UploadService, private router: Router) { }
 
   oldUser: User;
   newUser: User;
@@ -27,7 +26,6 @@ export class MiCuentaComponent implements OnInit {
   passwordConfirmation;
   cambiarPassword = false;
   formData = new FormData();
-  verMiSteam = false;
   error;
 
   ngOnInit(): void {
@@ -35,18 +33,14 @@ export class MiCuentaComponent implements OnInit {
       this.oldUser = {
         "name": response['name'],
         "email": response['email'],
-        "icon": response['icon'],
-        "idSteam": response['idSteam']
+        "icon": response['icon']
       }
-console.log(response);
+
       this.newUser = {
         "name": response['name'],
         "email": response['email'],
-        "icon": response['icon'],
-        "idSteam": response['idSteam']
+        "icon": response['icon']
       }
-
-      this.comprobarIdSteam();
     });
   }
 
@@ -356,105 +350,6 @@ console.log(response);
     });
   }
 
-  changeIdSteam() {
-    sweet.fire({
-      title: "Cambiar Id Steam",
-      showCancelButton: true,
-      input: 'text',
-      inputLabel: 'Introduzca tu id de Steam',
-    }).then(result => {
-      if (result.isConfirmed && result.value != "") {
-        if (result.value != this.oldUser.idSteam) {
-          let id = result.value;
-          sweet.fire({
-            title: "Introduzca tu contraseña",
-            showCancelButton: true,
-            input: 'password',
-          }).then(result => {
-            if (result.isConfirmed && result.value != "") {
-              let loginObj: login = {
-                "email": localStorage.getItem('email'),
-                "password": result.value
-              }
-              this.authService.login(loginObj).subscribe(response => {
-                this.steamService.getGamesOfUser(id).subscribe(response => {
-                  let idSteam = {
-                    "idSteam": id
-                  }
-                  this.gameService.putUser(localStorage.getItem('userId'), idSteam).subscribe(response => {
-                    localStorage.setItem('idSteam', response['idSteam']);
-                    this.verMiSteam = true;
-                    this.ngOnInit();
-                    sweet.fire({
-                      toast: true,
-                      position: 'bottom-end',
-                      showConfirmButton: false,
-                      timer: 3000,
-                      timerProgressBar: true,
-                      icon: 'success',
-                      title: 'ID de Steam cambiado correctamente'
-                    })
-                  });
-                }, error => {
-                  sweet.fire({
-                    toast: true,
-                    position: 'bottom-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    icon: 'error',
-                    title: 'ID de Steam erroneo'
-                  })
-                });
-              }, error => {
-                sweet.fire({
-                  toast: true,
-                  position: 'bottom-end',
-                  showConfirmButton: false,
-                  timer: 3000,
-                  timerProgressBar: true,
-                  icon: 'error',
-                  title: 'Contraseña erronea'
-                })
-              })
-            } else {
-              sweet.fire({
-                toast: true,
-                position: 'bottom-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                icon: 'error',
-                title: 'Contraseña vacia'
-              })
-            }
-
-          });
-        } else {
-          sweet.fire({
-            toast: true,
-            position: 'bottom-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            icon: 'error',
-            title: 'Introduzca un ID de Steam distinto al actual'
-          })
-        }
-      } else {
-        sweet.fire({
-          toast: true,
-          position: 'bottom-end',
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          icon: 'error',
-          title: 'ID Steam introducido vacio'
-        })
-      }
-    });
-  }
-
   cambiar() {
 
     if (this.validarCambiar()) {
@@ -544,32 +439,5 @@ console.log(response);
         window.location.reload();
       });
     })
-  }
-
-  anyadirIdSteam() {
-    if (this.newUser.idSteam != "" || this.newUser.idSteam != null || this.newUser.idSteam != undefined) {
-      if (this.newUser.idSteam != this.oldUser.idSteam) {
-        this.steamService.getGamesOfUser(this.newUser.idSteam).subscribe(response => {
-          let idSteam = {
-            "idSteam": this.newUser.idSteam
-          }
-          this.gameService.putUser(localStorage.getItem('userId'), idSteam).subscribe(response => {
-            localStorage.setItem('idSteam', response['idSteam']);
-            this.verMiSteam = true;
-
-            //window.location.reload();
-          });
-        }, error => {
-          this.error = "ID de Steam erroneo";
-        });
-      }
-    }
-  }
-
-  comprobarIdSteam() {
-    console.log("entro");
-    this.steamService.getGamesOfUser(this.oldUser.idSteam).subscribe(response => {
-      this.verMiSteam = true;
-    });
   }
 }

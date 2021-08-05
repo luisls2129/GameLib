@@ -1,0 +1,76 @@
+@import "../../scss/01_utilities/_functions", "../../scss/01_utilities/_variables.scss";
+
+.containerMiCuenta{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+
+  background-color: getColor('negro', 2)+d9;
+}
+
+.boxIcon{
+  display: flex;
+  flex-direction: column;
+
+  &__labelIcon{
+    border-radius: 160px;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+
+  &__icon{
+    width: 300px;
+    height: 300px;
+    border-radius: 160px;
+    border: 10px solid getColor('primario', 5);
+    margin: auto;
+    margin-bottom: 25px;
+  }
+
+  &__inputIcon{
+    display: none;
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+
+  &__box{
+    color: getColor('blanco', 9);
+
+    width: 450px;
+
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  &__boxData{
+    width: 250px;
+  }
+
+  &__label{
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  &__data{
+    font-size: 25px;
+  }
+
+  &__button{
+    height: 50px;
+    width: 70px;
+
+    margin-left: auto;
+
+    border-radius: 10px;
+    background-color: getColor('primario', 7);
+    color: getColor('blanco', 9);
+    border: 0px;
+  }
+}

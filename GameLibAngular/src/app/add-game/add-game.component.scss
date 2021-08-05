@@ -1,0 +1,296 @@
+@import "../../scss/01_utilities/_functions", "../../scss/01_utilities/_variables.scss";
+
+.containerGames{
+  background-color: getColor('negro', 2)+d9;
+
+  //50 = height of menu
+  min-height: calc(100vh - 50px);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.boxButtonAddGame{
+  width: 100%;
+  display: flex;
+
+  &__button{
+    height: 30px;
+
+    margin: 10px;
+
+    color: getColor('blanco', 9);
+    background-color: getColor('primario', 6);
+    border: 1px solid getColor('primario', 2);
+    border-radius: 5px;
+
+    margin-left: auto;
+  }
+}
+
+.cardGame{
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
+  margin: 35px;
+
+  &__image{
+    width: 325px;
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  &__name{
+    margin: 10px auto;
+    color: white;
+  }
+}
+
+.boxBack{
+  width: 100%;
+
+  &__button{
+    width: 50px;
+    height: 35px;
+
+    background-color: transparent;
+
+    border: 0px ;
+    color: getColor('secundario', 9);
+  }
+}
+
+.containerGame{
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+
+
+  &__image{
+    max-width: 100%;
+
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  &__confirm{
+
+    height: 40px;
+
+    color: getColor('blanco', 9);
+
+    border: 1px solid getColor('primario', 2);
+    border-radius: 10px;
+
+    background-color: getColor('primario', 6);
+
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+
+  &__label{
+    color: white;
+    margin: 10px auto;
+  }
+
+  &__commentary{
+    margin-bottom: 35px;
+  }
+
+  &__boxRange{
+    display: flex;
+     flex-direction: row;
+      justify-content: space-between;
+  }
+
+  &__range{
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__valueRange{
+    font-size: 25px;
+    color: white;
+    width: 50px;
+  }
+
+  &__icon{
+    font-size: 25px;
+    color: white;
+  }
+
+  &__assessment{
+
+      width: 250px;
+      margin-left: 25px;
+      background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &,
+    &::-webkit-slider-runnable-track,
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-slider-thumb {
+      background-color: #777;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #333;
+      border-radius: 50%;
+      margin-top: -9px;
+    }
+
+    &::-moz-range-thumb {
+      background-color: #777;
+      width: 15px;
+      height: 15px;
+      border: 3px solid #333;
+      border-radius: 50%;
+    }
+
+    &::-ms-thumb {
+      background-color: #777;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #333;
+      border-radius: 50%;
+    }
+
+    &::-webkit-slider-runnable-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      outline: none;
+    }
+
+    &::-moz-range-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &::-ms-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &::-ms-fill-lower {
+      background-color: HotPink
+    }
+
+    &::-ms-fill-upper {
+      background-color: black;
+    }
+  }
+
+  &__date{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  &__inpDate{
+    margin: auto;
+  }
+}
+
+.range{
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  &__label {
+    margin: 10px auto;
+  }
+
+  &__boxRange {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__valueRange {
+    font-size: 25px;
+    width: 50px;
+  }
+
+  &__range {
+    width: 250px;
+    margin-left: 25px;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &,
+    &::-webkit-slider-runnable-track,
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-slider-thumb {
+      background-color: #777;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #333;
+      border-radius: 50%;
+      margin-top: -9px;
+    }
+
+    &::-moz-range-thumb {
+      background-color: #777;
+      width: 15px;
+      height: 15px;
+      border: 3px solid #333;
+      border-radius: 50%;
+    }
+
+    &::-ms-thumb {
+      background-color: #777;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #333;
+      border-radius: 50%;
+    }
+
+    &::-webkit-slider-runnable-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      outline: none;
+    }
+
+    &::-moz-range-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &::-ms-track {
+      background-color: #777;
+      height: 3px;
+    }
+
+    &::-ms-fill-lower {
+      background-color: HotPink;
+    }
+
+    &::-ms-fill-upper {
+      background-color: black;
+    }
+  }
+}

@@ -4,7 +4,6 @@ import { AddGameComponent } from './add-game/add-game.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
-import { MiSteamComponent } from './mi-steam/mi-steam.component';
 import { MisJuegosComponent } from './mis-juegos/mis-juegos.component';
 import { RegistroComponent } from './registro/registro.component';
 import { GuardAuthService } from './servicios/guard-auth.service';
@@ -16,8 +15,7 @@ const routes: Routes = [
   {path : 'registro', component : RegistroComponent},
   {path : 'misJuegos', component : MisJuegosComponent, canActivate : [GuardAuthService]},
   {path : 'addGame', component : AddGameComponent, canActivate : [GuardAuthService]},
-  {path : 'miCuenta', component : MiCuentaComponent, canActivate : [GuardAuthService]},
-  {path : 'miSteam', component : MiSteamComponent, canActivate : [GuardAuthService]}
+  {path : 'miCuenta', component : MiCuentaComponent, canActivate : [GuardAuthService]}
 ];
 
 @NgModule({

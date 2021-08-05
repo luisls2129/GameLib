@@ -1,0 +1,68 @@
+@import "../../scss/01_utilities/_functions", "../../scss/01_utilities/_variables.scss";
+.containerHome{
+  background-color: getColor('negro', 2)+d9;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+}
+
+.containerLastGames{
+  width: 90%;
+  height: 200px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+
+  background-color: getColor('primario', 4);
+  color: getColor('blanco', 9);
+  font-size: 12px;
+  border-radius: 20px;
+
+  &__userInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:10px;
+  }
+
+  &__userName{
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  &__userIcon{
+    height:100px;
+    width: 100px;
+    border-radius:160px;
+    border: 4px solid getColor('primario', 9);
+  }
+
+  &__gameInfo{
+    margin: 20px;
+  }
+
+  &__gameName{
+    font-size: 18px;
+    margin: 5px 20px 20px 0px;
+  }
+
+  &__gameAssessment{
+    margin: 20px 20px 20px 0px;
+  }
+
+  &__gameTime{
+    margin: 20px 20px 20px 0px;
+  }
+
+  &__gameCommentary{
+    margin: 20px 20px 20px 0px;
+  }
+
+  &__gameImage{
+    width: 35%;
+    margin-left: auto;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

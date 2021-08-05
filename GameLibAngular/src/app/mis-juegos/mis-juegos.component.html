@@ -1,41 +1,53 @@
-<div class="p-misJuegos">
-  <div class="c-boxAddGame">
-    <button class="c-boxAddGame__button" (click)="addGame()"><i class="fas fa-plus"></i> Añadir juego</button>
+<div class="container">
+  <div class="button_addGame">
+    <button class="button_addGame__button" (click)="addGame()"><i class="fas fa-plus"></i>Añadir juego</button>
   </div>
   <div *ngFor="let game of myGames">
-    <div id="{{game.name}}" class="c-cardMyGame">
-      <img class="c-cardMyGame__gameImage" src="{{game['url_image']}}" alt="{{game['url_image']}}">
-      <p class="c-title">{{game['name']}}</p>
-      <div class="c-cardMyGame__box">
-        <h6 class="c-commentary">Comentario : {{game['commentary']}}</h6>
-        <span style="color: #1457DB;" (click)="editCommentary(game)">
-          <i class="far fa-edit"></i>
-        </span>
+    <div id="{{game.name}}" class="cardGame">
+      <img class="cardGame__image" src="{{game['url_image']}}" alt="{{game['url_image']}}">
+      <p class="cardGame__title">{{game['name']}}</p>
+      <div class="textContainer">
+        <h6 class="textContainer__title">Comentario</h6>
+        <div class="textContainer__box">
+          <p class="textContainer__text">{{game['commentary']}}</p>
+          <span style="color: #1457DB;" (click)="editCommentary(game)">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
       </div>
-      <div class="c-cardMyGame__box">
-        <h6 class="assessment">Votacion : {{game['assessment']}}</h6>
-        <span style="color: #1457DB;" (click)="editAssessment(game)">
-          <i class="far fa-edit"></i>
-        </span>
+      <div class="textContainer">
+        <p class="textContainer__title">Valoración</p>
+        <div class="textContainer__box">
+          <p class="textContainer__text" style="font-size: 20px;">{{game['assessment']}} <i class="far fa-star"></i></p>
+          <span style="color: #1457DB;" (click)="editAssessment(game)">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
       </div>
-      <div class="c-cardMyGame__box">
-        <p class="time">Tiempo de juego : {{game['time']}}</p>
-        <span style="color: #1457DB;" (click)="editTime(game)">
-          <i class="far fa-edit"></i>
-        </span>
+      <div class="textContainer">
+        <p class="textContainer__title">Tiempo de juego</p>
+        <div class="textContainer__box">
+          <p class="textContainer__text" style="font-size: 20px;">{{game['time']}} <i class="far fa-clock"></i></p>
+          <span style="color: #1457DB;" (click)="editTime(game)">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
       </div>
-      <div class="c-cardMyGame__box">
-        <h6 class="startDate">Fecha inicio : {{game['start_date']}}</h6>
+      <div class="textContainer">
+        <h6 class="textContainer__title">Fecha inicio</h6>
+        <div class="textContainer__box">
+          <p class="textContainer__text" style="font-size: 20px;">{{game['start_date']}}</p>
+          <span style="color: #1457DB;" (click)="editStartDate(game)">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
         <input type="date" id="inputStartDate" [(ngModel)]="fecha" style="display: none;">
-        <span style="color: #1457DB;" (click)="editStartDate(game)">
-          <i class="far fa-edit"></i>
-        </span>
       </div>
-      <button class="c-cardMyGame__button" (click)="eliminar(game)">eliminar</button>
+      <button class="cardGame__button" (click)="eliminar(game)">eliminar</button>
     </div>
   </div>
-  <div *ngIf="vacio" class="c-bibliotecaVacia">
-    <i class="fas fa-heart-broken c-bibliotecaVacia__icon"></i>
-    <p class="c-bibliotecaVacia__texto">No has añadido ningun juego todavia</p>
+  <div *ngIf="vacio" class="vacio">
+    <i class="fas fa-heart-broken vacio__icon"></i>
+    <p class="vacio__texto">No has añadido ningun juego todavia</p>
   </div>
 </div>

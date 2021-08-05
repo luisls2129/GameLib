@@ -1,17 +1,17 @@
-<div class="p-cardLastGames">
+<div class="containerHome">
   <div *ngFor = "let data of datas">
-      <div class="c-cardLastGames">
-        <div class="l-infoUserLastGames">
-          <img class="c-cardLastGames__userIcon" src="{{data['user']['icon']}}">
-          <p class="c-cardLastGames__userName">{{data['user']['name']}}</p>
+      <div class="containerLastGames">
+        <div class="containerLastGames__userInfo">
+          <img class="containerLastGames__userIcon" src="{{data['user']['icon']}}">
+          <p class="containerLastGames__userName">{{data['user']['name']}}</p>
         </div>
-        <div class="c-cardLastGamesDatas">
-          <p class="c-cardLastGamesDatas__gameName">{{data['game']['name']}}</p>
-          <p class="c-cardLastGamesDatas__assessment">Valoración : {{data['game']['assessment']}}</p>
-          <p class="c-cardLastGamesDatas__time">Tiempo jugado : {{data['game']['time']}} horas</p>
-          <p class="c-cardLastGamesDatas__commentary">Comentario : {{data['game']['commentary']}}</p>
+        <div class="containerLastGames__gameInfo">
+          <p class="containerLastGames__gameName">{{data['game']['name']}}</p>
+          <p class="containerLastGames__gameAssessment">Valoración : {{data['game']['assessment']}}</p>
+          <p class="containerLastGames__gameTime">Tiempo jugado : {{data['game']['time']}} horas</p>
+          <p class="containerLastGames__gameCommentary">Comentario : {{data['game']['commentary']}}</p>
         </div>
-        <img class="c-cardLastGames__image"  src="{{data['game']['url_image']}}" alt="{{data['game']['url_image']}}">
+        <img class="containerLastGames__gameImage"  src="{{data['game']['url_image']}}" alt="{{data['game']['url_image']}}">
       </div>
   </div>
 </div>

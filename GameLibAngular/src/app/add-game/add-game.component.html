@@ -1,49 +1,48 @@
-<div class="p-addGame" *ngIf="viewSelectGame">
-  <div class="c-boxAddGame">
-    <button class="c-boxAddGame__button" (click)="createGame()"><i class="fas fa-plus"></i> Crear Juego</button>
+<div class="containerGames" *ngIf="viewSelectGame">
+  <div class="boxButtonAddGame">
+    <button class="boxButtonAddGame__button" (click)="createGame()"><i class="fas fa-plus"></i> Crear Juego</button>
   </div>
   <div *ngFor="let game of games">
-    <div class="c-game">
-      <img class="c-game__image" src="{{game['url_image']}}" alt="{{game['url_image']}}" (click)="addThisGame(game)">
-      <p class="c-game__name">{{game['name']}}</p>
+    <div class="cardGame">
+      <img class="cardGame__image" src="{{game['url_image']}}" alt="{{game['url_image']}}" (click)="addThisGame(game)">
+      <p class="cardGame__name">{{game['name']}}</p>
     </div>
   </div>
 </div>
 
-<div class="p-addGame" *ngIf="viewAddGame">
-  <div class="g--boxAllLine">
-    <button class="p-addGame__cancel" (click)="cancel()"><i class="fas fa-arrow-left"></i></button>
+<div class="containerGames" *ngIf="viewAddGame">
+  <div class="boxBack">
+    <button class="boxBack__button" (click)="cancel()"><i class="fas fa-arrow-left"></i></button>
   </div>
-  <div class="c-addGame">
-    <img class="c-addGame__image"
-      src="{{game['url_image']}}">
-    <div class="c-formAddGame">
-      <label class="c-formAddGame__label">Comentario</label>
-      <textarea class="c-formAddGame__commentary" maxlength="255" rows="4" cols="60" id="inputComentario"
+  <div class="containerGame">
+    <img class="containerGame__image" src="{{game['url_image']}}">
+    <div class="form">
+      <label class="form__label">Comentario</label>
+      <textarea class="form__commentary" maxlength="255" rows="4" cols="60" id="inputComentario"
         [(ngModel)]="commentary"></textarea>
 
-      <div class="c-formAddGame__boxRange">
-        <div class="c-range">
-          <label class="c-range__label">Valoración</label>
-          <div class="c-range__boxRange">
-            <p class="c-range__valueRange">{{assessment}}</p> <i class="far fa-star c-formAddGame__icon"></i>
-            <input class="c-range__range" type="range" min="1" max="10" step="0.5" [(ngModel)]="assessment">
+      <div class="form__boxRange">
+        <div class="range">
+          <label class="range__label">Valoración</label>
+          <div class="range__boxRange">
+            <p class="range__valueRange">{{assessment}}</p> <i class="far fa-star form__icon"></i>
+            <input class="range__range" type="range" min="1" max="10" step="0.1" [(ngModel)]="assessment">
           </div>
         </div>
-        <div class="c-range">
-          <label class="c-range__label">Tiempo de juego en horas</label>
-          <div class="c-range__boxRange">
-            <p class="c-range__valueRange">{{time}}</p> <i class="far fa-clock c-formAddGame__icon"></i>
-            <input class="c-range__range" type="range" min="0" max="500" placeholder="hola" [(ngModel)]="time">
+        <div class="range">
+          <label class="range__label">Tiempo de juego en horas</label>
+          <div class="range__boxRange">
+            <p class="range__valueRange">{{time}}</p> <i class="far fa-clock form__icon"></i>
+            <input class="range__range" type="range" min="0" max="500" placeholder="hola" [(ngModel)]="time">
           </div>
         </div>
       </div>
-      <div class="c-formAddGame__date">
-        <label class="c-formAddGame__label">Cuando empezaste el juego</label>
-        <input class="c-formAddGame__inpDate" type="date" [(ngModel)]="start_date">
+      <div class="form__date">
+        <label class="form__label">Cuando empezaste el juego</label>
+        <input class="form__inpDate" type="date" [(ngModel)]="start_date">
       </div>
 
     </div>
-    <button class="c-addGame__confirm" (click)="confirm()">Añadir</button>
+    <button class="containerGame__confirm" (click)="confirm()">Añadir</button>
   </div>
 </div>

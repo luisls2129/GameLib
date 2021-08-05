@@ -1,0 +1,119 @@
+@import "../../scss/01_utilities/_functions", "../../scss/01_utilities/_variables.scss";
+
+.container{
+  margin: auto;
+  background-color: getColor('negro', 2)+d9;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  min-height: calc(100vh - 50px);
+}
+
+.button_addGame{
+  width: 100%;
+  display: flex;
+
+  &__button{
+    height: 30px;
+
+    margin: 10px;
+
+    color: getColor('blanco', 9);
+    background-color: getColor('primario', 6);
+    border: 1px solid getColor('primario', 2);
+    border-radius: 5px;
+
+    margin-left: auto;
+  }
+}
+
+.cardGame{
+  width: 450px;
+
+  margin: 20px;
+
+  border: 1px solid getColor('secundario', 6);
+  color: getColor('blanco', 9);
+  background-color: getColor('negro', 3);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__image{
+    width: 100%;
+    height: 225px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__button{
+    height: 30px;
+
+    margin: 10px 10px 10px auto;
+
+    border: getColor('secundario', 9) 1px solid;
+    border-radius: 5px;
+
+    color: getColor('secundario', 9);
+    background: transparent;
+  }
+
+  &__button:hover{
+    background-color: getColor('secundario', 9);
+    color: getColor('blanco', 9);
+  }
+
+  &__title{
+    font-size: 25px;
+    text-align: center;
+    margin: 10px;
+  }
+}
+
+.textContainer{
+  margin: 10px;
+  justify-content: space-between;
+
+  &__title{
+    margin-right: 15px;
+    text-align: justify;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__text{
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px 15px 0px;
+  }
+}
+
+.vacio{
+  color: getColor('blanco', 9);
+
+  display: flex;
+  flex-direction: column;
+
+  height: 300px;
+
+  &__icon{
+    font-size: 250px;
+    margin: auto;
+  }
+
+  &__texto{
+    font-size: 25px;
+    margin: auto;
+  }
+}

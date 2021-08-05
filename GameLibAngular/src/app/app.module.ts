@@ -12,7 +12,6 @@ import { MisJuegosComponent } from './mis-juegos/mis-juegos.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { MiCuentaComponent } from './mi-cuenta/mi-cuenta.component';
-import { MiSteamComponent } from './mi-steam/mi-steam.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -26,8 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MisJuegosComponent,
     RegistroComponent,
     AddGameComponent,
-    MiCuentaComponent,
-    MiSteamComponent,
+    MiCuentaComponent
   ],
   imports: [
     BrowserModule,

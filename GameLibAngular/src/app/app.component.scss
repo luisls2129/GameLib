@@ -1,0 +1,7 @@
+@import "../scss/01_utilities/_functions", "../scss/01_utilities/_variables.scss";
+
+.container{
+  min-width: 80vw;
+  margin: auto;
+  min-height: calc(100vh - 50px);
+}

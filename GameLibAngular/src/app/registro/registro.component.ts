@@ -36,7 +36,6 @@ export class RegistroComponent implements OnInit {
         localStorage.setItem('token', response['token']);
         localStorage.setItem('userId', response['user']['_id']);
         localStorage.setItem('email', response['user']['email']);
-        localStorage.setItem('idSteam', response['user']['idSteam']);
         sweet.fire({
           toast: true,
           position: 'bottom-end',

@@ -71,7 +71,6 @@ class userController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->games = [];
-        $user->idSteam = "";
         $user->icon = "https://res.cloudinary.com/luislopez2129/image/upload/v1618512120/angular_prueba/jqxie4vdkmttbgkssgwq.png";
         $user->save();
 
@@ -125,9 +124,6 @@ class userController extends Controller
         }
         if ($request->icon != "" || isset($request->icon) ) {
             $user->icon = $request->icon;
-        }
-        if ($request->idSteam != "" || isset($request->idSteam) ) {
-            $user->idSteam = $request->idSteam;
         }
 
         $user->save();
